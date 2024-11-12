@@ -7,10 +7,12 @@ document.querySelector('span').remove(); // 요소(element) 삭제
 // 합산 => 평균, 최고점수, 최저점수 구해서 
 // 우리반 평균은 ??이고, 최고점은 ??이고, 최저점은 ??이다.
 
-let friends = [80,75,60,95,90];
+let friends = [];
 let sum = 0, avg = 0, max = 0, min = 101;
 
-for (let i = 0; i < friends.length; i++) {
+for (let i = 0; i < 5; i++) {
+  let a = prompt('점수를 입력하세요.')
+  friends.push(a);
   sum += friends[i];
   avg = sum/friends.length;
   if (max < friends[i]) {
