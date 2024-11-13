@@ -25,5 +25,13 @@ function sum(param1, param2) {
 
 // 배열을 매개값으로 받아서 요소중에서 가장 큰 값을 구하는 함수.
 // getMaxValue(배열)
-
+function getMaxValue(param1) {
+  let max = 0;
+  for (let i = 0; i < param1.length; i++){
+    if (max < param1[i]){
+      max = param1[i];
+    }
+  }
+  return max;
+}
 console.log(getMaxValue(numAry1));
