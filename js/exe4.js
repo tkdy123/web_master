@@ -13,8 +13,7 @@ let sum = 0, avg = 0, max = 0, min = 101;
 for (let i = 0; i < 5; i++) {
   let a = prompt('점수를 입력하세요.')
   friends.push(a);
-  sum += friends[i];
-  avg = sum/friends.length;
+  sum += parseInt(friends[i]);
   if (max < friends[i]) {
     max = friends[i];
   }
@@ -22,4 +21,5 @@ for (let i = 0; i < 5; i++) {
     min = friends[i];
   }
 }
+avg = sum/friends.length;
 console.log(`우리반 평균은 ${avg}이고, 최고점은 ${max}이고, 최저점은 ${min}이다.`);
