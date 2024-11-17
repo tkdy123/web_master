@@ -20,7 +20,7 @@ let sum = 0;
 // for (let number in numAry) {
 //   console.log(number)
 // }
-//배열일 경우에 method.//forEach() 는 함수를 매개값으로 받음 forEach 앞에 배열의 갯수만큼 함수를 실행 
+// 배열일 경우에 method.//forEach() 는 함수를 매개값으로 받음 forEach 앞에 배열의 갯수만큼 함수를 실행 
 // numAry.forEach(function(param1,param2,param3){
 //   console.log(`요소 ${param1}, 인덱스 ${param2}, 배열자신 ${param3}`)
 // }); 

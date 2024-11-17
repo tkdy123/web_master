@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또번호</title>
+    <style>
+        #container {
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #lotto {
+            background: rgb(139, 207, 206);
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            border-radius: 20px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: rgb(163, 202, 188);
+            cursor: pointer;
+        }
+
+        span {
+            border: 2px solid orange;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>로또 번호 발생기</h1>
+        <button type="button" id="btn">클릭</button>
+        <div id="lotto">
+            <span>3</span><span>2</span><span>1</span><span>4</span><span>5</span><span>6</span>
+        </div>
+    </div>
+    <script>
+        //임의의 숫자 6개 생성 1~45
+        let cN = function () {
+            document.querySelector('#lotto').innerHTML = ``
+            let rn = []
+<<<<<<< HEAD
+            while (rn.length < 6) {
+                let a = parseInt(Math.random() * 45 + 1)
+=======
+            console.log(`실행됨`)
+            let uniq = true;
+            while (rn.length < 6) {
+                let a = parseInt(Math.random() * 45 + 1)
+                console.log('뽑은숫자'+a)
+>>>>>>> 4b0d733ea33f124010e1a43d3d04a8bc25955c90
+                for (let i = 0; i < rn.length; i++) {
+                    if (a == rn[i]) {
+                        console.log(`${i+1}번째 값과 곂침니다`)
+                        a = 0
+                    }
+                }
+                if (a != 0) {
+                    rn.push(a)
+                }
+            }
+            cNN(rn)
+        }
+        let cNN = function (rn) {
+            for (i = 0; i < rn.length; i++) {
+                document.querySelector('#lotto').innerHTML += `<span>${rn[i]}</span>`
+            }
+        }
+        document.querySelector('#btn').addEventListener('click', cN);
+    </script>
+</body>
+
+</html>
