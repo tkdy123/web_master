@@ -104,11 +104,13 @@ document.querySelector('button.btn.btn-primary') //
 
     // 전체선택 하는 이벤트 추가. change 이벤트.
 
-    document.querySelector('thead input[type="checkbox"') //
+    document.querySelector('thead input[type="checkbox"]') //
       .addEventListener('change', (e) => {
-        console.log('thead input[type="checkbox":nth-of-type(0)');
+        console.log('thead input[type="checkbox"]:nth-of-type(0)');
         let listTr = document.querySelectorAll('#list tr');
-        if (document.querySelector('thead input[type="checkbox"').checked == true){
-          for(let i = 0)
+        if (document.querySelector('thead input[type="checkbox"]').checked == true){
+          for(let i = 0; listTr.length; i++){
+            listTr[i].children[0].children[0].checked != listTr[i].children[0].children[0].checked;
+          }
         }
       })
