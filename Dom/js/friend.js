@@ -11,12 +11,41 @@ function makeRow(friendInfo = {name, phone, birth, bloodtype}) {
     document.querySelector('input[name="friendPhone"]').value = this.children[2].innerHTML;
     document.querySelector('input[name="friendBirth"]').value = this.children[3].innerHTML;
     document.querySelector('select[name="friendBloodType"]').value = this.children[4].innerHTML;
-  })
+  });
 
   // <td><input type="checkbox"></td>
   let td = document.createElement('td');
   let checkbox = document.createElement('input');
   checkbox.setAttribute("type", "checkbox");
+  checkbox.addEventListener('click', (e) => { e.stopPropagation()});
+  checkbox.addEventListener('change', (e) => {
+    // head 쪽 체크박스의 값 => false;
+    // body 체크박스의 값 중에 하나 false => 변경.
+
+    // document.querySelector('thead input[type="checkbox"]').checked = true;
+    // document.querySelectorAll('tbody input[type="checkbox"]').forEach(item =>{
+    //   if (!item.checked) {
+    //     document.querySelector('thead input[type="checkbox"]').checked = false
+    //   }
+    // });
+
+    // 체크박스의 갯수와 체크된 체크박스의 갯수 => true / false.
+    let chks = document.querySelectorAll('tbody input[type="checkbox"]');
+    let chkeds = document.querySelectorAll('tbody input[type="checkbox"]:checked');
+    console.log(chks.length, chkeds.length);
+
+    document.querySelector('thead input[type="checkbox"]').checked =
+    chks.length == chkeds.length ? true : false;
+
+    // 체크박스의 갯수와 체크된 체크박스의 갯수 => true / false.
+
+    // if (chks.length == chkeds.length) {
+    //   document.querySelector('thead input[type="checkbox"]').checked =true;
+    // } else {
+    //   document.querySelector('thead input[type="checkbox"]').checked = false;
+    // }
+
+    });
   td.appendChild(checkbox);
   tr.appendChild(td);
 
@@ -32,9 +61,10 @@ function makeRow(friendInfo = {name, phone, birth, bloodtype}) {
   btn.innerHTML = '삭제';
   btn.setAttribute('class', 'btn btn-danger'); // 태그에 attribute 를 추가.
   btn.addEventListener('click', (e) =>{ // 삭제버튼에 클릭이벤트 등록.
+    // 상위요소로의 이벤트전파 차단.
+    e.stopPropagation();
     e.target.parentElement.parentElement.remove();
-    
-  })
+  }); // 3번째 매개값의 의미 : bubbling, capturing 선택, 디폴트 값은 false.
   td.appendChild(btn);
   tr.appendChild(td);
   return tr;
@@ -105,12 +135,29 @@ document.querySelector('button.btn.btn-primary') //
     // 전체선택 하는 이벤트 추가. change 이벤트.
 
     document.querySelector('thead input[type="checkbox"]') //
-      .addEventListener('change', (e) => {
-        console.log('thead input[type="checkbox"]:nth-of-type(0)');
-        let listTr = document.querySelectorAll('#list tr');
-        if (document.querySelector('thead input[type="checkbox"]').checked == true){
-          for(let i = 0; listTr.length; i++){
-            listTr[i].children[0].children[0].checked != listTr[i].children[0].children[0].checked;
-          }
-        }
-      })
+    .addEventListener('change', (e) => {
+      console.log(e.target.checked); // input:checkbox => checked 속성.
+      // 대상변경 : tbody input[type="checkbox"]
+      document.querySelectorAll('tbody input[type="checkbox"]') // 
+      .forEach((item) => 
+        item.checked = e.target.checked);
+    });
+
+    // 정보저장버튼 클릭하면 친구의 정보를 localStorage에 저장.
+    document.querySelector('button.btn-info').addEventListener('click', (e) => {
+      let ary = [];
+      document.querySelectorAll('#list tr').forEach(item => {
+        console.log(item);
+        let name = item.children[1].innerHTML; // 이름
+        let phone = item.children[2].innerHTML; // 연락처
+        let birth = item.children[3].innerHTML; // 생일
+        let btype = item.children[1].innerHTML; // 혈액형
+        let obj = {name, phone, birth, btype}
+        console.log(obj);
+        ary.push(obj);
+      });
+      console.log(ary);
+
+      let json = JSON.stringify(ary); // object -> 문자열 변형.
+      localStorage.setItem('friendList', json); 
+    })
