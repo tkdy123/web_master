@@ -43,6 +43,7 @@ integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIe
         template.querySelector('img').setAttribute('src', 'images/' + friend.name +'.jpg');
         template.querySelector('h5.card-title').innerHTML = friend.name;
         template.querySelector('p.card-text').innerHTML = friend.birth + '<br>' + friend.btype;
+        console.log(friend.btype);
         document.querySelector('div.row').appendChild(template);
         console.log(template);
       })

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <table border="2">
+    <tr>
+      <th>아이디</th>
+      <td><input type="text" name="uid" id="uid"></td>
+    </tr>
+    <tr>
+      <th>비밀번호</th>
+      <td><input type="password" name="upw" id="upw"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <button>로그인</button>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    let members = [{
+        id: 'user01',
+        pw: '1111',
+        name: '사용자1'
+      },
+      {
+        id: 'user02',
+        pw: '2222',
+        name: '사용자2'
+      },
+      {
+        id: 'user03',
+        pw: '3333',
+        name: '사용자3'
+      }
+    ]
+    // code
+    document.querySelector('table button').addEventListener('click', (e) => {
+
+      let uid = document.querySelector('table input[name="uid"]').value
+      let upw = document.querySelector('table input[name="upw"]').value
+
+      //   for (let i = 0; members.length; i++) {
+      //     if (members[i].id == uid && members[i].pw == upw) {
+      //       alert('로그인 성공  ' + members[i].name);
+      //       break;
+      //     } else if (members[i].id != uid && members[i].pw == upw) {
+      //       alert('아이디 오류');
+      //       break;
+      //     } else if (members[i].id == uid && members[i].pw != upw) {
+      //       alert('비밀번호 오류');
+      //       break;
+      //     }
+      //   }
+
+      // filter 사용
+
+      // let a = members.filter(item => {
+      //   // console.log(item.id)
+      //   if (item.id == uid && item.pw == upw) {
+      //     return true;
+      //   }
+      // });
+      // if (a.length == 0) {
+      //   alert('로그인 실패')
+      // }
+      // else {
+      //   alert('로그인 성공')
+      // }
+      
+      // filter 사용
+
+      let result = members.filter(member => member.id == uid && member.pw == upw);
+        console.log(result);
+        if (result.length) {
+          alert('로그인 성공')
+        } else {
+          alert('로그인 실패')
+        }
+
+      // for each
+
+      // let isOk = false;
+      // members.forEach(member => {
+      //   if (member.id == uid && member.pw == upw) {
+      //     isOk = true;
+      //     return;
+      //   }
+      // });
+
+
+      });
+  </script>
+</body>
+
+</html>

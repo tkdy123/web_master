@@ -2,7 +2,7 @@
 // children, appendchild
 // this => 함수 : window 객체, 이벤트핸들러 : 이벤트대상, object : 객체자신.
 // 
-function makeRow(friendInfo = {name, phone, birth, bloodtype}) {
+function makeRow(friendInfo = {name, phone, birth, btype}) {
   // 이름, 연락처, 생일. => tr 생성한 후 tr 반환.
   let tr = document.createElement('tr');
   tr.addEventListener('click', function(e) { // this
@@ -87,7 +87,7 @@ document.querySelector('button.btn.btn-primary') //
       alert('필수값을 입력하세요.')
       return;
     }
-    let param = {name:fname, phone:fphone, birth:fbirth, bloodtype:ftype}
+    let param = {name:fname, phone:fphone, birth:fbirth, btype:ftype}
 
     let tr = makeRow(param);
     document.querySelector('#list').appendChild(tr);
@@ -114,7 +114,7 @@ document.querySelector('button.btn.btn-primary') //
           // 연락처, 생일, 혈액형.
           listTr[i].children[2].innerHTML = phone;
           listTr[i].children[3].innerHTML = birth;
-          listTr[i].children[4].innerHTML = bloodtype;
+          listTr[i].children[4].innerHTML = btype;
         }
       }
     })
@@ -151,7 +151,7 @@ document.querySelector('button.btn.btn-primary') //
         let name = item.children[1].innerHTML; // 이름
         let phone = item.children[2].innerHTML; // 연락처
         let birth = item.children[3].innerHTML; // 생일
-        let btype = item.children[1].innerHTML; // 혈액형
+        let btype = item.children[4].innerHTML; // 혈액형
         let obj = {name, phone, birth, btype}
         console.log(obj);
         ary.push(obj);
