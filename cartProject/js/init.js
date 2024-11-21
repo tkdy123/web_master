@@ -97,6 +97,22 @@
         qty: 3
       }
     ]
+    Number.prototype.format = function () {
+      //9123456789 => 9,123,456,789
+      let strAry = ('' + this).split('');
+      let cnt = 0;
+      let numStr = '';
+      strAry.reverse().forEach(word => {
+        if(cnt++ % 3 == 0) {
+          numStr += word.replace('', ','); 
+        } else {
+          numStr += word;
+        }
+      })
+      // console.log(numSrt.replace(',', ''));
+      return numStr.replace(',', '').split('').reverse().join('');
+    }
+    console.log((9123456789123456).format());
 
     // 객체의 정보를 활용해서 row 생성.
     function makeRow(obj = {}) {
