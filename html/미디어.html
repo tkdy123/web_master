@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>미디어</title>
+    <style>
+      img{
+        width: 100px;
+        height: 100px;
+      }
+      .float_left{
+        width: 500px;
+        float: left;
+        padding: 10px;
+        background-color: blue;
+      }
+      .float{
+        float: right;
+      }
+      .float_left p{
+        /* padding: 20px; */
+        background-color: #ccc;
+      }
+      .float_right{
+        float: right;
+        width: 500px;
+      }
+      figure{
+        background-color: beige;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>미디어 삽입</h1>
+    <h3>이미지 삽입</h3>
+    <div class="float_left">
+    <img src="img/레드향.jpg" alt="레드향" title="잠 깨우는 이미지" class="float">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa odit fugit
+       consequuntur facere quis porro, necessitatibus veniam temporibus consectetur,
+       atque quam ullam unde perspiciatis corporis tempora est earum provident aliquam.</p>
+    </div>
+    <div class="float_right">
+      <img src="img/레드향.jpg" alt="">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ratione
+       inventore enim provident quia tempora cupiditate
+       aliquid impedit dolorem fugiat officiis qui quae animi eius dicta vel eos, id cum!</p>
+    </div>
+    <figure>
+      <img src="img/레드향.jpg" alt="레드향">
+      <img src="img/레드향.jpg" alt="레드향">
+      <img src="img/레드향.jpg" alt="레드향">
+      <figcaption>잠을 깨우는 상큼한 이미지</figcaption>
+    </figure>
+    <h3>오디오 삽입</h3>
+    <audio src="media/미소속에비친그대.mp3" controls></audio>
+    <video src="media/사랑한다사랑해.mp4" controls width="500" height="400"></video>
+    <h3>외부 파일 삽입</h3>
+    <object data="media/2-1.과제(html작성).pdf" width="500" height="600"></object>
+    <embed src="media/2-1.과제(html작성).pdf" width="500" height="600">
+    <object data="index.html" width="300" height="600"></object>
+    <iframe src="media/2-1.과제(html작성).pdf" width="500" height="600"></iframe>
+    <h3>유튜브 영상 삽입</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/SfYj5wtUD6o?si=-2bNJxezVHoqW3n1" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </body>
+</html>

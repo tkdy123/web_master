@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" style="background-color: rgb(199, 191, 191);">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한줄평 확인</title>
+
+  <link href="css/reviewcheck.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+
+</head>
+<body style="background-color: rgb(199, 191, 191);">
+  <div id="container">
+    <h2>영화 한줄평</h2>
+    <div class="row">
+  
+</div>
+</div>
+
+<script>
+  let movieData = JSON.parse(localStorage.getItem('movieData'));
+  let reviewData = JSON.parse(localStorage.getItem('reviewData'));
+
+  reviewData.forEach(element => {
+    let data = movieData.filter(e=>e.pcode==element.pcode)
+    data.forEach(e=>{
+      if(e.pcode==element.pcode){
+        let template = `<ul class="list-group">
+      <li class-"list-group-item">${e.pname}</li>
+    <li class="list-group-item"><img src="img/${e.image}" width="50px">${element.review}</li>
+  </ul>`
+  ;
+  document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
+      }
+    })
+  });
+</script>
+</body>
+
+</html>

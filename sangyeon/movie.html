@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>영화목록, 리뷰쓰기</title>
+
+  <link href="css/movie.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+
+</head>
+
+<body style="background-color: rgb(199, 191, 191);">
+  <div class="container">
+    <h1 align="center">영화목록</h1>
+    <a href="welcome.html">메인페이지</a>
+    <div class="row">
+
+      
+    </div>
+  </div>
+  
+  <script>
+    
+    let movieData = JSON.parse(localStorage.getItem('movieData'));
+    let reviewData = JSON.parse(localStorage.getItem('reviewData'));
+
+   movieData.forEach(movie => {
+    let template = `<div class="col" data-pcode="${movie.pcode}">
+     <div class="card" style="width: 18rem;">
+      <img src="img/${movie.image}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${movie.pname}</h5>
+        <p class="card-text">${movie.caption}</p>
+        <input type="text" name="text" placeholder="15자 미만 공백없이">
+        <p class="btn btn-primary">한줄평 등록</p>
+        
+      </div>
+     </div>
+   </div>`;
+      document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
+    })
+    
+    // 한줄평 등록하기
+    
+    document.querySelectorAll('p.btn-primary').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        let text = e.target.previousElementSibling
+        // text.value
+        console.log(text.value)
+        let id = localStorage.getItem('logId');
+        let pcode = e.target.closest('div.col').getAttribute('data-pcode');
+
+        // 똑같은 id, pcode가 이미 있으면 같은곳에 
+        let result = reviewData.filter(review => review.id == id && review.pcode == pcode);
+        if (result.length) {
+          reviewData.forEach(review => {
+            if (review.id == id && review.pcode == pcode) {
+              review.review;
+              return;
+            }
+          });
+        } else {
+          // 없으면 추가.
+        reviewData.push({
+          id: id,
+          pcode: pcode,
+          review: text.value
+        })
+        }
+        })
+        localStorage.setItem('reviewData', JSON.stringify(reviewData)); // 저장
+        });      
+
+  </script>
+</body>
+
+</html>

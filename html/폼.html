@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼</title>
+  <style>
+    #container{
+      width: 660px;
+      margin: 0 auto;
+    }
+    form ul {
+      list-style: none;
+    }
+    form li{
+      margin-bottom: 10px;
+    }
+    form fieldset{
+      margin: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 100px;
+    }
+    /* .bnone{
+      border: none;
+      text-align: center;
+    } */
+    fieldset:nth-child(even){
+      border : 2px solid blue;
+    }
+    fieldset:nth-child(odd){
+      border: 2px solid green;
+    }
+    fieldset:last-child{
+      border: none;
+      text-align: center;
+    }
+
+    .redtext {
+      color: red;
+    }
+    .float{
+      /* width: 100px; */
+      float: left;
+    }
+    input:focus{
+      background-color: yellow;
+    }
+    input:enabled{
+      background-color: greenyellow;
+    }
+    input:disabled{
+      background-color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <form action="login.jsp" method="post" name="login">
+      <fieldset>
+        <legend>로그인 정보</legend>
+        <ul>
+          <li>
+            <label for="user-id">아이디 <span class="redtext">*</span></label>
+            <input type="text" id="user-id" name="user-id" required maxlength="8" size="40">
+          </li>
+          <li>
+            <label for="pw">비밀번호 <span class="redtext">*</span></label>
+            <input type="password" id="pw" name="pw" required>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>개인정보</legend>
+        <ul>
+          <li>
+            <label for="nation">국적</label>
+            <input type="text" id="nation" name="nation" value="대한민국" readonly>
+          </li>
+          <li>
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" autofocus>
+          </li>
+          <li>
+            <label for="phone">전화번호</label>
+            <input type="tel" id="phone" name="phone" placeholder="-빼고 숫자만 입력">
+          </li>
+          <li>
+            <label for="mail">이메일</label>
+            <input type="email" id="mail" name="mail">
+          </li>
+          <li>
+            <label for="homepage">홈페이지</label>
+            <input type="url" id="homepage" name="homepage">
+          </li>
+          <li>
+            <label>색상선택</label>
+            <label><input type="radio" name="color" value="red" checked>빨강</label>
+            <label><input type="radio" name="color" value="blue">파랑</label>
+            <label><input type="radio" name="color" value="green">초록</label>
+            <label><input type="radio" name="color" value="yellow">노랑</label>
+          </li>
+          <li>
+            <label>sns</label>
+            <label><input type="checkbox" name="sns" value="instar" checked>인스타</label>
+            <label><input type="checkbox" name="sns" value="facebook">페이스북</label>
+            <label><input type="checkbox" name="sns" value="twitter">트위터</label>
+          </li>
+          <li>
+            <label for="upload">파일전송</label>
+            <input type="file" id="upload" name="upload">
+          </li>
+          <li>
+            <label for="search">검색</label>
+            <input type="search" id="search" name="search" disabled>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>숫자/날짜 정보</legend>
+        <ul>
+          <li>
+            <label for="number">스핀박스</label>
+            <input type="number" id="number" name="number" value="1" min="1" max="10" step="2">
+          </li>
+          <li>
+            <label for="slider">슬라이더</label>
+            <input type="range" id="slider" name="slider" value="10" min="0" max="10" step="2">
+          </li>
+          <li>
+            <label for="date">년원일</label>
+            <input type="date" id="date" name="date">
+          </li>
+          <li>
+            <label for="ym">년월</label>
+            <input type="month" id="ym" name="ym">
+          </li>
+          <li>
+            <label for="yw">년주</label>
+            <input type="week" id="yw" name="yw">
+          </li>
+          <li>
+            <label for="ymdt">년월일시</label>
+            <input type="datetime-local" id="ymdt" name="ymdt">
+          </li>
+          <li>
+            <label for="time">시간</label>
+            <input type="time" id="time" name="time">
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>기타 입력 태그</legend>
+        <ul>
+          <li>
+            <label for="memo" class="float">가입동기</label>
+            <textarea id="memo" name="memo" cols="60" rows="5" placeholder="지원동기 간략히 작성하세요"></textarea>
+            <label for="gonggi" class="float">공지사항</label>
+            <textarea id="gonggi" name="gonggi" cols="60" rows="5" readonly>
+              1. 공지사항1
+              2. 공지사항2
+              1. 공지사항1
+              2. 공지사항2
+            </textarea>
+          </li>
+          <li>
+            <label for="select">색상선택</label>
+            <select id="select">
+              <optgroup label="따뜻한색">
+                <option value="red">빨강</option>
+                <option value="orange" selected>주황</option>
+                <option value="yellow">노랑</option>
+              </optgroup>
+              <optgroup label="차가운색">
+                <option value="blue">파랑</option>
+                <option value="purple">보라</option>
+                <option value="white">하얀</option>
+              </optgroup>
+            </select>
+          </li>
+          <li>
+            <label for="dlist">SNS</label>
+            <input id="dlist" type="text" list="datalist">
+            <datalist id="datalist">
+              <option value="instar">인스타</option>
+              <option value="twitter">트위터</option>
+              <option value="facebook">페이스북</option>
+            </datalist>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset class="bnone">
+        <input type="submit" value="전송버튼">
+        <input type="reset" value="취소버튼">
+        <input type="button" value="일반버튼" onclick="window.open()"><br>
+        <button type="submit">전송버튼</button>
+        <button type="reset">취소버튼</button>
+        <button type="button">일반버튼
+          <!-- <img src="img/개1.jpg" alt=""> -->
+        </button>
+      </fieldset>
+    </form>
+  </div>
+</body>
+
+</html>

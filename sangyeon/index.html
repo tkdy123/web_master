@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index.html</title>
+</head>
+<body>
+  <a href="login.html">로그인 페이지로 이동</a>
+  <script src="js/data.js"></script>
+  
+  <script>
+    localStorage.setItem('memberData', JSON.stringify(memberData));
+    localStorage.setItem('movieData', JSON.stringify(movieData));
+    localStorage.setItem('reviewData', JSON.stringify(reviewData));
+  </script>
+</body>
+</html>

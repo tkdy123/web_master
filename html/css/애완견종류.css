@@ -1,0 +1,90 @@
+    @import url('https://fonts.googleapis.com/css2?family=Gasoek+One&family=Nanum+Brush+Script&display=swap');
+
+    /* *{
+        margin: 0;
+        padding: 0;
+      } */
+    #container {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: rgb(228, 58, 163);
+      font-family: "Nanum Brush Script", cursive;
+      padding: 10px;
+    }
+
+    section {
+      background-color: rgb(132, 132, 143);
+      padding: 3px 10px;
+    }
+    section ul li{
+      display: inline-block;
+      margin: 10px 20px;
+    }
+    section a{
+      text-decoration: none;
+    }
+    section ul{
+      text-align: center;
+    }
+    section p{
+      text-align: right;
+      padding-right: 20px;
+    }
+    nav ul li {
+      display: inline-block;
+      padding: 10px;
+      border-bottom: 2px solid #fff;
+      border-radius: 10px;
+    }
+    nav a{
+      color: #fff;
+      font-size: 20px;
+      /* margin: 10px; */
+      text-decoration: none;
+      display: block;
+    }
+
+    article {
+      border: 1px solid red;
+      background-color: rgba(247, 244, 244, 0.1);
+      border-radius: 20px;
+      padding: 10px;
+        /* font-family: "Gasoek One", sans-serif; */
+    }
+    figure {
+      text-align: center;
+    }
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: 5px 5px 20px 2px #000;
+      border: 2px solid #eee;
+      margin: 10px;
+    }
+
+    aside {
+      background-color: violet;
+      padding: 10px;
+    }
+
+    footer {
+      background-color: rgb(7, 23, 250);
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+      font-weight: bold;
+    }
+    footer p{
+      margin-top:  0;
+      font-style: italic;
+    }
+
+    nav ul {
+      text-align: right;
+      margin: 0;
+      list-style-position: inside;
+    }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여가시간</title>
+  <style>
+    #container{
+      width: 1100px;
+      margin: 0 auto;
+      border: 2px solid #ccc;
+      text-align: center;
+      overflow: hidden;
+      padding: 10px;
+    }
+    h1{
+      margin-top:  10px;
+    }
+    .travel-card{
+      width: 250px;
+      height: 340px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      padding: 10px;
+      float: left;
+      margin: 10px;
+      /* margin-right: 20px; */
+      box-sizing: border-box;
+      text-align: center;
+
+    }
+    .travel-card img{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 10px 0;
+    }
+    .travel-card img:hover{
+      transform: rotate(60deg);
+    }
+    .visible{
+      /* visibility: hidden; */
+      opacity: 0.5;
+      /* display: none; */
+    }
+    .visible:hover{
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>여가 시간 즐기기</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, labore.</p>
+    <div class="travel-card">
+      <img src="img/개1.jpg" alt="도심 투어">
+      <h4>도심 투어</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, accusamus.</p>
+    </div>
+    <div class="travel-card visible">
+      <img src="img/개2.jpg" alt="바다 즐기기">
+      <h4>바다 즐기기</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, accusamus.</p>
+    </div>
+    <div class="travel-card">
+      <img src="img/개3.jpg" alt="등산 도전하기">
+      <h4>등산 도전하기</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, accusamus.</p>
+    </div>
+    <div class="travel-card">
+      <img src="img/골든리트리버.jpg" alt="관광지 투어">
+      <h4>관광지 투어</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, accusamus.</p>
+    </div>
+  </div>
+</body>
+</html>

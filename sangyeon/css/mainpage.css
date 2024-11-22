@@ -1,0 +1,47 @@
+*{
+  box-sizing: border-box;
+  text-align: center;
+}
+html {
+  background-color: rgb(199, 191, 191);
+}
+
+#container {
+  width: 1250px;
+  margin: 0 auto;
+}
+header h1 a{
+  text-decoration: none;
+}
+nav{
+  background-color: blueviolet;
+  overflow: hidden;
+}
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav li{
+  float: left;
+  padding: 5px;
+}
+nav li:nth-child(3) {
+  float: right;
+}
+nav a{
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+}
+footer {
+  background-color: black;
+  color: white;
+  /* height: 30px; */
+  /* padding: 5px; */
+  
+}
+footer h4 {
+  margin: 0;
+}
