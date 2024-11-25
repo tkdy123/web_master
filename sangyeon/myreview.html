@@ -37,12 +37,31 @@
     //
     myReview.forEach(review => {
       let movieInfo = movieData.filter(movie => review.pcode == movie.pcode)[0];
-      let template = `<ul class="list-group">
+      let template = `<ul class="list-group" data-pcode="${review.pcode}">
         <li class-"list-group-item">${movieInfo.pname}</li>
       <li class="list-group-item"><img src="img/${movieInfo.image}" width="50px">${review.review}</li>
+      <button class="delete">삭제</button>
+      <button class="fix">수정</button>
     </ul>`;
     document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
     });
+
+    document.querySelectorAll('.delete').forEach(icon => {
+      icon.addEventListener('click', e => {
+        let pcode = e.target.closest('ul').getAttribute('data-pcode');
+        e.target.closest('ul').remove();
+       
+        // localStorage에도 반영. cartData 전체카드정보. id, pcode 같은 값을 삭제 저장.
+        // logId, pcode
+        removeData(logId, pcode);
+      })
+    })
+
+
+    function removeData(logId, pcode) {
+      reviewData = reviewData.filter(review => !(review.pcode == pcode && review.id == logId));
+      localStorage.setItem('reviewData', JSON.stringify(reviewData));
+    }
   </script>
 
 </body>

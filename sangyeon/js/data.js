@@ -1,18 +1,18 @@
 // id, pw, name
 const memberData = [{
-    id: 'user01',
+    id: 'yedam1',
     pw: '1111',
     name: '사용자1',
     responsibility: 'User'
   },
   {
-    id: 'user02',
+    id: 'movie2',
     pw: '2222',
     name: '사용자2',
     responsibility: 'User'
   },
   {
-    id: 'user03',
+    id: 'review3',
     pw: '3333',
     name: '사용자3',
     responsibility: 'User'
@@ -84,22 +84,22 @@ const movieData = [{
 
 // id, pcode, review
 const reviewData = [{
-    id: 'user01',
+    id: 'yedam1',
     pcode: '001',
     review: '재밌음'
   },
   {
-    id: 'user01',
+    id: 'yedam1',
     pcode: '002',
     review: '재밌음'
   },
   {
-    id: 'user02',
+    id: 'movie2',
     pcode: '002',
     review: '재밌음'
   },
   {
-    id: 'user03',
+    id: 'review3',
     pcode: '003',
     review: '재밌음'
   },

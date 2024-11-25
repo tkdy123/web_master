@@ -1,0 +1,66 @@
+*{
+  box-sizing: border-box;
+  font-family: "맑은 고딕";
+  text-align: center;
+}
+body {
+  background-image: url("https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20230702%2Fpngtree-glistening-red-and-gold-stage-set-against-a-stunning-red-theatre-image_3730978.jpg&type=sc960_832");
+}
+body h1 {
+  color: white;
+  font-size: 50px;
+}
+#container{
+  width: 1000px;
+  margin: 0 auto;
+}
+#container a{
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+}
+section{
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+  background-color: #ccc;
+}
+section fieldset{
+  border: none;
+}
+section legend{
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
+}
+section ul{
+  list-style: none;
+  padding: 0;
+}
+section li{
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.5);
+  border: 1px solid white;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+section label{
+  width: 130px;
+  float: left;
+}
+section input{
+  width: 250px;
+  padding: 3px;
+  text-align: left;
+}
+button{
+  width: 150px;
+  border: none;
+  border-radius: 30px;
+  background-color: #ddd;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
+}

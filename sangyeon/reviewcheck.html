@@ -35,10 +35,10 @@
       data.forEach(e=>{
         if(e.pcode==element.pcode){
           let template = `<ul class="list-group">
-        <li class-"list-group-item">${e.pname}</li>
+            <li class-"list-group-item">아이디 : ${element.id}</li>
+            <li class-"list-group-item">영화 제목 : ${e.pname}</li>
       <li class="list-group-item"><img src="img/${e.image}" width="50px">${element.review}</li>
-    </ul>`
-    ;
+    </ul>`;
     document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
         }
       })

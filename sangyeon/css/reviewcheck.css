@@ -13,3 +13,7 @@ body a {
 #container ul {
   list-style: none;
 }
+ul li:nth-child(1) {
+  font-weight: bold;
+  font-size: 20px;
+}

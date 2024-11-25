@@ -56,7 +56,6 @@
         let id = localStorage.getItem('logId');
         let pcode = e.target.closest('div.col').getAttribute('data-pcode');
 
-        // 똑같은 pcode가 이미 있으면 같은곳에 
         let result = reviewData.filter(review => review.pcode == pcode);
         reviewData.push({
           id: id,
