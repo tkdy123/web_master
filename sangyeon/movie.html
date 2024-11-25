@@ -16,23 +16,21 @@
 
 </head>
 
-<body style="background-color: rgb(199, 191, 191);">
+<body>
   <div class="container">
     <h1 align="center">영화목록</h1>
     <a href="welcome.html">메인페이지</a>
     <div class="row">
-
-      
     </div>
   </div>
-  
+
   <script>
-    
     let movieData = JSON.parse(localStorage.getItem('movieData'));
     let reviewData = JSON.parse(localStorage.getItem('reviewData'));
 
-   movieData.forEach(movie => {
-    let template = `<div class="col" data-pcode="${movie.pcode}">
+
+    movieData.forEach(movie => {
+      let template = `<div class="col" data-pcode="${movie.pcode}">
      <div class="card" style="width: 18rem;">
       <img src="img/${movie.image}" class="card-img-top" alt="...">
       <div class="card-body">
@@ -46,38 +44,29 @@
    </div>`;
       document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
     })
-    
+
     // 한줄평 등록하기
-    
+
     document.querySelectorAll('p.btn-primary').forEach(btn => {
       btn.addEventListener('click', (e) => {
         let text = e.target.previousElementSibling
+        let tv = text.value
         // text.value
-        console.log(text.value)
+        // console.log(tv)
         let id = localStorage.getItem('logId');
         let pcode = e.target.closest('div.col').getAttribute('data-pcode');
 
-        // 똑같은 id, pcode가 이미 있으면 같은곳에 
-        let result = reviewData.filter(review => review.id == id && review.pcode == pcode);
-        if (result.length) {
-          reviewData.forEach(review => {
-            if (review.id == id && review.pcode == pcode) {
-              review.review;
-              return;
-            }
-          });
-        } else {
-          // 없으면 추가.
+        // 똑같은 pcode가 이미 있으면 같은곳에 
+        let result = reviewData.filter(review => review.pcode == pcode);
         reviewData.push({
           id: id,
           pcode: pcode,
           review: text.value
         })
-        }
-        })
         localStorage.setItem('reviewData', JSON.stringify(reviewData)); // 저장
-        });      
-
+        console.log(reviewData)
+      })
+    })
   </script>
 </body>
 

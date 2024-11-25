@@ -1,3 +1,14 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-image: url("https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20230702%2Fpngtree-glistening-red-and-gold-stage-set-against-a-stunning-red-theatre-image_3730978.jpg&type=sc960_832");
+}
+body h1 {
+  color: white;
+}
+body a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}

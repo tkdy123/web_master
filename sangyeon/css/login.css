@@ -1,3 +1,56 @@
-#container {
-  width: 1250px;
+*{
+  box-sizing: border-box;
+  font-family: "맑은 고딕";
+  text-align: center;
+}
+body {
+  background-image: url("https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20230702%2Fpngtree-glistening-red-and-gold-stage-set-against-a-stunning-red-theatre-image_3730978.jpg&type=sc960_832");
+}
+#container{
+  width: 1000px;
+  margin: 0 auto;
+}
+h1 {
+ color: white;
+ font-size: 80px;
+}
+nav{
+  background-color: black;
+  overflow: hidden;
+}
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav li{
+  float: left;
+  padding: 5px;
+}
+nav a{
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+}
+nav a:hover{
+  background-color: pink;
+  color: black;
+}
+section{
+  float: left;
+  text-align: center;
+  width: 980px;
+  height: 700px;
+  padding: 5px;
+}
+.table input {
+  text-align: left;
+}
+footer{
+  clear: both;
+  color: aliceblue;
+  font-weight: bold;
+  height: 40px;
+  padding: 10px;
 }

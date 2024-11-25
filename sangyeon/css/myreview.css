@@ -2,13 +2,17 @@
   width: 800px;
   margin: 0 auto;
 }
+body {
+  background-color: rgb(199, 191, 191);
+}
 body a {
   text-decoration: none;
   color: white;
   font-weight: bold;
 }
-#container h2 {
+#container h1 {
   text-align: center;
+  color: white;
 }
 #container ul {
   list-style: none;

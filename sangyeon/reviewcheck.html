@@ -18,6 +18,7 @@
 <body style="background-color: rgb(199, 191, 191);">
   <div id="container">
     <h2>영화 한줄평</h2>
+    <a href="welcome.html">메인페이지</a>
     <div class="row">
   
 </div>
@@ -26,20 +27,24 @@
 <script>
   let movieData = JSON.parse(localStorage.getItem('movieData'));
   let reviewData = JSON.parse(localStorage.getItem('reviewData'));
+  console.log(reviewData);
+  movie();
+  function movie() {
+    reviewData.forEach(element => {
+      let data = movieData.filter(e=>e.pcode==element.pcode)
+      data.forEach(e=>{
+        if(e.pcode==element.pcode){
+          let template = `<ul class="list-group">
+        <li class-"list-group-item">${e.pname}</li>
+      <li class="list-group-item"><img src="img/${e.image}" width="50px">${element.review}</li>
+    </ul>`
+    ;
+    document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
+        }
+      })
+    });
 
-  reviewData.forEach(element => {
-    let data = movieData.filter(e=>e.pcode==element.pcode)
-    data.forEach(e=>{
-      if(e.pcode==element.pcode){
-        let template = `<ul class="list-group">
-      <li class-"list-group-item">${e.pname}</li>
-    <li class="list-group-item"><img src="img/${e.image}" width="50px">${element.review}</li>
-  </ul>`
-  ;
-  document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
-      }
-    })
-  });
+  }
 </script>
 </body>
 
