@@ -50,11 +50,12 @@
         let pcode = e.target.closest('ul').getAttribute('data-pcode');
         e.target.closest('ul').remove();
 
-        // localStorage에도 반영. cartData 전체카드정보. id, pcode 같은 값을 삭제 저장.
-        // logId, pcode
+        alert("삭제되었습니다.")
         removeData(logId, pcode);
       })
     })
+
+    
 
 
     function removeData(logId, pcode) {

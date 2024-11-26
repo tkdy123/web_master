@@ -28,10 +28,6 @@
             <label for="pw">비밀번호</label>
             <input type="text" id="pw" name="pw">
           </li>
-          <li>
-            <label for="pwc">비밀번호 확인</label>
-            <input type="text" id="pwc" name="pwc">
-          </li>
         </ul>
       </fieldset>
       <fieldset>
@@ -48,18 +44,21 @@
       let id = e.target.parentElement.previousElementSibling.children[1].children[0].children[1].value;
       let nickname = e.target.parentElement.previousElementSibling.children[1].children[1].children[1].value;
       let pw = e.target.parentElement.previousElementSibling.children[1].children[2].children[1].value;
-      if (id != memberData.id && id != '') {
-        memberData.push({
-          id: id,
-          pw: pw,
-          name: nickname
-        });
-      } else {
-        alert("이미 사용 중인 아이디 입니다.")
-      }
-      localStorage.setItem('memberData', JSON.stringify(memberData));
-      location.href="login.html"
-      console.log(memberData)
+      let isOk = true;
+      memberData.forEach(element => {
+        if (element.id == id) {
+          isOk = false;
+        } if (isOk == false){alert("중복된 아이디 입니다."); isOk = true}
+        else{
+          memberData.push({
+            id: id,
+            pw: pw,
+            name: name
+          });
+        }
+        location.href = "login.html"
+        localStorage.setItem('memberData', JSON.stringify(memberData));
+      });
     });
   </script>
 </body>

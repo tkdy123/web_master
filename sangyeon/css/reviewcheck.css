@@ -14,11 +14,18 @@ body a {
 }
 #container h2 {
   text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
 }
 #container ul {
   list-style: none;
   margin-bottom: 10px;
-  width: 300px;
+  /* width: 300px; */
+}
+ul img:hover {
+  transition: all 1s;
+  transform: scale(3.0);
 }
 ul li:nth-child(1) {
   font-weight: bold;
@@ -32,4 +39,9 @@ ul li:nth-child(2) {
   font-weight: bold;
   border-bottom: 1px solid black;
   background-color: white;
+}
+ul li:nth-child(3) i{
+  text-align: right;
+  display: none;
+  font-size: 30px;
 }
