@@ -8,14 +8,26 @@ body {
   background-size: cover;
 }
 body a {
+  display: inline-block;
   text-decoration: none;
   color: white;
   font-weight: bold;
+  border: 1px solid white;
+  background-color: blueviolet;
+  margin-bottom: 20px;
+}
+ul:hover{
+  transition: all 1s;
+  transform: scale(1.2);
 }
 #container h1 {
-  text-align: center;
   color: white;
+  text-align: center;
 }
 #container ul {
   list-style: none;
+}
+ul li:nth-of-type(1) {
+  color: white;
+  font-weight: bold;
 }

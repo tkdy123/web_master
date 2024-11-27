@@ -27,6 +27,7 @@ section{
   width: 800px;
   margin: 0 auto;
   background-color: #ccc;
+  border-radius: 30px;
 }
 section fieldset{
   border: none;
@@ -65,4 +66,12 @@ button{
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 30px;
+}
+.signup:hover {
+  background-color: black;
+  color: white;
+}
+footer h4 {
+  color: white;
+  font-weight: bold;
 }

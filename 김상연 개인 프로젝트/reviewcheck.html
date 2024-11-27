@@ -20,8 +20,8 @@
 
 <body>
   <div id="container">
-    <h2>영화 한줄평</h2>
-    <a href="welcome.html">메인페이지</a>
+    <h2><i class="fa-regular fa-pen-to-square"></i>  영화 한줄평</h2>
+    <a href="welcome.html">메인페이지로 이동</a>
     <div class="row">
 
     </div>
@@ -37,17 +37,39 @@
       reviewData.forEach(element => {
         let data = movieData.filter(e => e.pcode == element.pcode)
         data.forEach(e => {
+          
           if (e.pcode == element.pcode) {
-            let template = `<ul class="list-group" data-pcode="${element.pcode}">
+            let template = `<ul class="list-group" data-id="${element.id}" data-pcode="${element.pcode}">
             <li class-"list-group-item">아이디 : ${element.id}</li>
             <li class-"list-group-item">영화 제목 : ${e.pname}</li>
-      <li class="list-group-item"><img src="img/${e.image}" width="50px">${element.review}</li>
+      <li class="list-group-item"><img src="img/${e.image}" width="50px">${element.review}<button id="like">추천</button></li>
+      <li class="list-group-item">추천수 : <input type="text" value="${element.qty}"></li>
     </ul>`;
             document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
           }
         })
       });
     }
+
+    document.querySelectorAll('#like').forEach(icon => {
+      icon.addEventListener('click', e => {
+      let id = e.target.closest('ul').getAttribute('data-id')
+      let pcode = e.target.closest('ul').getAttribute('data-pcode')
+
+      let currentQty = e.target.parentElement.nextElementSibling.children[0].value
+      let asd = reviewData.filter(e=>e.pcode==pcode)
+      // console.log(currentQty)
+      if (currentQty < 10){
+        currentQty++;
+      } else {
+        return;
+      }
+      e.target.parentElement.nextElementSibling.children[0].value = currentQty;
+      asd[0].qty = currentQty;
+      alert("추천하셨습니다!")
+      localStorage.setItem('reviewData', JSON.stringify(reviewData));
+    });
+  })
 
   </script>
 </body>

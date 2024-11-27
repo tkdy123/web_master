@@ -86,26 +86,25 @@ const movieData = [{
 const reviewData = [{
     id: 'yedam1',
     pcode: '001',
-    review: '재밌음'
+    review: '다시 로마로 돌아온 기분일 정도로 웅장하고 대단했다',
+    qty: 3
   },
   {
     id: 'yedam1',
     pcode: '002',
-    review: '재밌음'
+    review: '오컬트가 뭔지 사흘 밤낮으로 고민하시길',
+    qty: 0
   },
   {
     id: 'movie2',
-    pcode: '002',
-    review: '재밌음'
+    pcode: '006',
+    review: '스토리가 이해하기가 힘드네요',
+    qty: 0
   },
   {
     id: 'review3',
-    pcode: '003',
-    review: '재밌음'
-  },
-  {
-    id: 'user04',
-    pcode: '003',
-    review: '재밌음'
+    pcode: '004',
+    review: '순수하고 깨끗하며 감동적인 영화',
+    qty: 0
   }
 ]

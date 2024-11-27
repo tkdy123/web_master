@@ -8,9 +8,14 @@ body {
   background-size: cover;
 }
 body a {
+  display: inline-block;
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: bold;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 20px;
 }
 #container h2 {
   text-align: center;
@@ -23,9 +28,9 @@ body a {
   margin-bottom: 10px;
   /* width: 300px; */
 }
-ul img:hover {
+ul:hover{
   transition: all 1s;
-  transform: scale(3.0);
+  transform: scale(1.2);
 }
 ul li:nth-child(1) {
   font-weight: bold;
